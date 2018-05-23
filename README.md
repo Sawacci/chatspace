@@ -1,16 +1,46 @@
-## membersテーブル
+## message table
 
 |Column|Type|Options|
 |------|----|-------|
 |body|text|-------|
 |image|string|-------|
-|group_id | integer | null: false, foreign_key: true|
-|user_id | integer | null: false, foreign_key: true|
-
+|user_id |integer|null: false, foreign_key: true|
+|chatgroup_id|interger|null: false|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+## user table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null :false|
+|email|srting|null :false|
+|password|string|null :false|
+
+### Association
+- has many :messages
+- has many :groups
+
+## group table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null :false|
+
+### Association
+- has many :users
+- has many messages
+
+## group_user table
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+
+### Association
+- has many :groups, though: group_users
+- has many :group_users
 
 
 
