@@ -1,7 +1,14 @@
+# ChatSpace
+
+複数人でチャットできるアプリケーション。
+文章や画像を友人とグループ内でやりとりできる。
+
+
+
 ### verson
-$ ruby -v ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-darwin15]
-$ rails -v Rails 5.0.7
-$ mysql version 5.6.36 
+$ ruby -v ruby 2.4.4p296 (2018-03-28 revision 63013) [x86_64-darwin15]
+$ rails -v Rails Rails 5.1.6
+$ mysql version 5.6.36
 
 ## message table
 
