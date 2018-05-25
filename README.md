@@ -7,7 +7,7 @@
 
 ### verson
 $ ruby -v ruby 2.4.4p296 (2018-03-28 revision 63013) [x86_64-darwin15]
-$ rails -v Rails Rails 5.1.6
+$ rails -v Rails 5.1.6
 $ mysql version 5.6.36
 
 ## message table
