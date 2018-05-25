@@ -15,7 +15,7 @@ $ mysql version 5.6.36
 |body|text| |
 |image|string|default: ''|
 |user_id |integer|null: false, foreign_key: true|
-|chat_group_id|interger|null: false|
+|chat_group_id|integer|null: false|
   
 
 ### Association
