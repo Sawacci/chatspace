@@ -9,10 +9,10 @@ $ rails -v Rails 5.1.6
 $ mysql version 5.6.36  
   
 
-## message table
+## messages table
 |Column|Type|Options|
 |------|----|-------|
-|body|text|default: ''|
+|body|text| |
 |image|string|default: ''|
 |user_id |integer|null: false, foreign_key: true|
 |chat_group_id|interger|null: false|
@@ -23,7 +23,7 @@ $ mysql version 5.6.36
 - belongs_to :user
   
 
-## user table
+## users table
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null :false, unique: true|
@@ -36,7 +36,7 @@ $ mysql version 5.6.36
 - has many :groups
   
 
-## group table
+## chat_groups table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null :false, unique: true|
@@ -47,7 +47,7 @@ $ mysql version 5.6.36
 - has many messages
   
 
-## group_user table
+## chat_group_users table
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
