@@ -1,24 +1,60 @@
-# README
+# ChatSpace
+複数人でチャットできるアプリケーション。  
+文章や画像を友人とグループ内でやりとりできる。
+  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### verson
+$ ruby -v ruby 2.4.4p296 (2018-03-28 revision 63013) [x86_64-darwin15]  
+$ rails -v Rails 5.1.6  
+$ mysql version 5.6.36  
+  
 
-Things you may want to cover:
+## messages table
+|Column|Type|Options|
+|------|----|-------|
+|body|text| |
+|image|string|default: ''|
+|user_id |integer|null: false, foreign_key: true|
+|chat_group_id|integer|null: false|
+  
 
-* Ruby version
+### Association
+- belongs_to :chat_group
+- belongs_to :user
+  
 
-* System dependencies
+## users table
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null :false, unique: true|
+|email|srting|null :false|
+|password|string|null :false|
+  
 
-* Configuration
+### Association
+- has many :messages
+- has many :groups
+  
 
-* Database creation
+## chat_groups table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null :false, unique: true|
+  
 
-* Database initialization
+### Association
+- has many :users
+- has many messages
+  
 
-* How to run the test suite
+## chat_group_users table
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|chat_group_id|integer|null: false, foreign_key: true|
+  
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- has many :chat_groups, though: chat_group_users
+- has many :chat_group_users
+  
